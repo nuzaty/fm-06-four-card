@@ -1,0 +1,44 @@
+@use 'tokens' as *;
+
+@mixin text-preset($family, $size, $weight, $line-height, $letter-spacing: null) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing;
+  }
+}
+
+/* Mobile (default) */
+.text-preset-1 {
+  @include text-preset($font-poppins, 1.5rem, $fw-semi-bold, 1.4, 0.0104em); // 0.25 ÷ 24
+}
+
+.text-preset-2 {
+  @include text-preset($font-poppins, 1.5rem, $fw-extra-light, 1.4, 0.0104em);
+}
+
+.text-preset-3 {
+  @include text-preset($font-poppins, 1.25rem, $fw-semi-bold, 1.35);
+}
+
+.text-preset-4 {
+  @include text-preset($font-poppins, 0.9375rem, $fw-regular, 1.4);
+}
+
+.text-preset-5 {
+  @include text-preset($font-poppins, 0.8125rem, $fw-regular, 1.6);
+}
+
+/* Non-mobile */
+@media (min-width: 48rem) {
+  .text-preset-1 {
+    @include text-preset($font-poppins, 2.25rem, $fw-semi-bold, 1.4, 0.0069em); // 0.25 ÷ 36
+  }
+
+  .text-preset-2 {
+    @include text-preset($font-poppins, 2.25rem, $fw-extra-light, 1.4, 0.0069em);
+  }
+}
