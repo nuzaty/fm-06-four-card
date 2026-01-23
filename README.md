@@ -5,24 +5,13 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 ### Screenshot
 
 Desktop
-[<img src="./screenshot/screen-desktop.png" width="800" height="450" style="object-fit: contain;object-position: left top;"/>](./screenshot/screen-desktop.png)
-
-<table style="border: none;">
-<tr style="border: none;">
-<td style="border: none;">
+[<img src="./screenshot/screen-desktop.png" />](./screenshot/screen-desktop.png)
 
 Tablet
-[<img src="./screenshot/screen-tablet.png" width="800" height="900" style="object-fit: contain;object-position: left top;"/>](./screenshot/tablet-tablet.png)
-
-</td>
-<td style="border: none;">
+[<img src="./screenshot/screen-tablet.png" />](./screenshot/tablet-tablet.png)
 
 Mobile
-[<img src="./screenshot/screen-mobile.png" width="800" height="900" style="object-fit: contain;object-position: left top;"/>](./screenshot/tablet-mobile.png)
-
-</td>
-</tr>
-</table>
+[<img src="./screenshot/screen-mobile.png" />](./screenshot/tablet-mobile.png)
 
 ### Links
 
