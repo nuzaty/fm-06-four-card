@@ -20,3 +20,10 @@ $space-400: 2rem;
 $space-300: 1.5rem;
 $space-200: 1rem;
 $space-100: 0.5rem;
+
+/* breakpoints */
+$bp-md: 48rem;
+$bp-lg: 64rem;
+$bp-xl: 90rem;
+
+$content-max-width: $bp-xl;

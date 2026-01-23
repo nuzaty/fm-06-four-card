@@ -1,58 +1,117 @@
 @use 'tokens' as *;
+@use 'media' as *;
 
 .features {
   display: flex;
   flex-direction: column;
   gap: $space-400;
-  max-width: 23.4375rem;
+  width: 100%;
   padding-inline: clamp(
     $space-200,
-    $space-200 + 4vw,
-    1.938rem
+    $space-200 + 3.8667vw,
+    1.90625rem
   ); // could use 2rem / $space-400, but sticking with Figma
   margin-inline: auto;
-  margin-bottom: $space-500;
+  margin-bottom: calc($space-500 * 1.15);
+
+  @include from-tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'team-builder team-builder'
+      'supervisor karma'
+      'calculator calculator';
+    gap: $space-400;
+    padding-inline: 3.375rem;
+    margin-bottom: calc($space-500 * 2);
+  }
+
+  @include from-desktop {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      'supervisor team-builder calculator'
+      'supervisor karma calculator';
+    padding-inline: clamp(2rem, 31.4904vw - 18.1538rem, 10.1875rem);
+    margin-bottom: calc($space-500 * 4.075);
+    max-width: $content-max-width;
+  }
 }
+
+$feature-accent-colors: (
+  'supervisor': $color-cyan,
+  'team-builder': $color-red,
+  'karma': $color-orange,
+  'calculator': $color-blue,
+);
 
 .feature-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   padding: $space-400;
   gap: $space-400;
   border-radius: 8px;
   box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
   overflow: hidden;
-}
 
-.feature-card__accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: $color-cyan; // default
-}
-
-$feature-accent-colors: (
-  'cyan': $color-cyan,
-  'red': $color-red,
-  'orange': $color-orange,
-  'blue': $color-blue,
-);
-@each $name, $color in $feature-accent-colors {
-  .feature-card--accent-#{$name} .feature-card__accent {
-    background-color: $color;
+  &__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $color-grey-500; // default
   }
-}
 
-.feature-card__title {
-  margin-bottom: 0.375rem;
-}
+  @each $name, $color in $feature-accent-colors {
+    &--#{$name} &__accent {
+      background-color: $color;
+    }
+  }
 
-.feature-card__icon {
-  width: 4rem;
-  height: 4rem;
-  margin-bottom: 0.9375rem;
+  &__title {
+    margin-bottom: 0.375rem;
+  }
+
+  &__icon {
+    align-self: flex-end;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 0.9375rem;
+  }
+
+  @include from-tablet {
+    @each $name, $color in $feature-accent-colors {
+      &--#{$name} {
+        grid-area: #{$name};
+      }
+    }
+
+    &--team-builder,
+    &--calculator {
+      /**
+       * Tablet-only fluid margin (768–1023px)
+       *
+       * Calculation Example (for reference only, recompute if there are changes):
+       * - Padding-inline = 54px,
+       * - Column Gap = 32px
+       * - Ideal card size @ 1023px = (1023 - 54*2 - 32) / 2 = 441.5px
+       * - Margin @ 768px = 173px = 10.8125rem
+       * - Margin @ 1023px =  (1023 - 54*2 - 441.5) / 2 = 236.75px = 14.796875rem
+       *
+       * Fluid margin: 10.8125rem -> 14.796875rem (768–1023px)
+       *               (but without min/max limit)
+       */
+      margin-inline: calc(25vw - 1.1875rem);
+    }
+  }
+
+  @include from-desktop {
+    &--team-builder,
+    &--calculator {
+      margin-inline: 0;
+    }
+  }
 }
