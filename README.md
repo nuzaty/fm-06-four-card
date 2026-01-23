@@ -5,13 +5,16 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 ### Screenshot
 
 Desktop
-[<img src="./screenshot/screen-desktop.png" />](./screenshot/screen-desktop.png)
+
+[<img src="./screenshot/screen-desktop.png" height="450"/>](./screenshot/screen-desktop.png)
 
 Tablet
-[<img src="./screenshot/screen-tablet.png" />](./screenshot/tablet-tablet.png)
+
+[<img src="./screenshot/screen-tablet.png" height="900"/>](./screenshot/tablet-tablet.png)
 
 Mobile
-[<img src="./screenshot/screen-mobile.png" />](./screenshot/tablet-mobile.png)
+
+[<img src="./screenshot/screen-mobile.png" height="900"/>](./screenshot/tablet-mobile.png)
 
 ### Links
 
