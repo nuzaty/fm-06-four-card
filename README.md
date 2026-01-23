@@ -10,7 +10,7 @@ Desktop
 
 Tablet
 
-[<img src="./screenshot/screen-tablet.png" height="900"/>](./screenshot/tablet-tablet.png)
+[<img src="./screenshot/screen-tablet.png" height="675"/>](./screenshot/tablet-tablet.png)
 
 Mobile
 
